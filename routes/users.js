@@ -1,8 +1,12 @@
 const router = require('express-promise-router')();
 
-const { exampleWithDB } = require('../controllers/users');
+const { 
+    exampleWithDB,
+    createTodo 
+} = require('../controllers/users');
 
 router.route('/')
-    .get(exampleWithDB);
+    .get(exampleWithDB)
+    .post(createTodo);
 
 module.exports = router;
